@@ -7,10 +7,7 @@
             Console.WriteLine("Üdvözöllek a Barkóba játékomban!\n\n" +
                               "Próbáld meg kitalálni a lehető legkevesebb próbálkozással milyen számra gondoltam...");
 
-
-
-
-//deklaráció
+            // Deklaráció
             int tipp;
             int tippekSzama = 0;
             bool sikeresSzambekeres;
@@ -18,29 +15,25 @@
             int gondoltSzam = random.Next(1, 1001);
             bool talalat = false;
 
-
-
             while (!talalat)
             {
-
-//szám bekérése és TryParse
+                // Szám bekérése és TryParse
                 do
                 {
                     Console.WriteLine("Kérem a tipped:");
                     string input = Console.ReadLine();
-
                     sikeresSzambekeres = int.TryParse(input, out tipp);
 
                     if (!sikeresSzambekeres)
                     {
                         Console.WriteLine("Kérlek számot adj meg!");
                     }
-                    sikeresSzambekeres = true;
                 }
                 while (!sikeresSzambekeres);
 
                 tippekSzama++;
-                //a tipp és a gondolt szám kiértékelése
+
+                // A tipp és a gondolt szám kiértékelése
                 if (gondoltSzam > tipp)
                 {
                     Console.WriteLine("Nagyobb számra gondoltam!");
@@ -51,11 +44,10 @@
                 }
                 else
                 {
-                    Console.WriteLine($"\n\nGratulálok!\nA tippjed száma: {tippekSzama}");
-                    talalat = true;
+                    Console.WriteLine($"\n\nGratulálok! Eltaláltad a számot {tippekSzama} próbálkozásból.");
+                    talalat = true; // A ciklus befejezéséhez
                 }
             }
-
         }
     }
 }
