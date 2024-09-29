@@ -9,6 +9,8 @@ namespace Homework_Mastermind
             Udvozlo();
             Kiertekeles();
         }
+
+
         #region Üdvözlő
         public static void Udvozlo()
         {
